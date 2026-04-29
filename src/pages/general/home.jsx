@@ -100,7 +100,7 @@ const VideoItem = ({ data, isSaved, onSave }) => {
   // 3. Function to handle clicking the Like button
    async function likeVideo(item) {
 
-        const response = await axios.post("http://localhost:3000/api/food/like", { foodId: item._id }, {withCredentials: true})
+        const response = await axios.post("https://foodie-scroller-backend.vercel.app/api/food/like", { foodId: item._id }, {withCredentials: true})
 
         if(response.data.like){
             console.log("Video liked");
