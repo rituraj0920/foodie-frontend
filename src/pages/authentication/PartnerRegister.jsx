@@ -17,7 +17,7 @@ const PartnerRegister=()=> {
       const password = e.target.password.value;
       
       
-      await axios.post("http://localhost:3000/api/auth/food-partner/register",{
+      await axios.post("https://foodie-scroller-backend.vercel.app/api/auth/food-partner/register",{
           businessname,
           email,
           password

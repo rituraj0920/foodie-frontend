@@ -18,7 +18,7 @@ const UserLogin=()=> {
       const password = e.target.password.value;
       
       
-      await axios.post("http://localhost:3000/api/auth/user/login",{
+      await axios.post("https://foodie-scroller-backend.vercel.app/api/auth/user/login",{
           
           email,
           password

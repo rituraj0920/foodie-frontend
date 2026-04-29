@@ -56,7 +56,7 @@ export default function CreateFood() {
     formData.append('description',description);
     formData.append('video',videoFile);
 
-    const responce =await axios.post("http://localhost:3000/api/food",formData,{
+    const responce =await axios.post("https://foodie-scroller-backend.vercel.app/api/food",formData,{
       withCredentials:true,
     })
 
