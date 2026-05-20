@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './createFood.css';
+import './CreateFood.css';
 import { data } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -56,7 +56,7 @@ export default function CreateFood() {
     formData.append('description',description);
     formData.append('video',videoFile);
 
-    const responce =await axios.post("https://foodie-scroller-backend.vercel.app/api/food",formData,{
+    const responce =await axios.post("http://localhost:3000/api/food",formData,{
       withCredentials:true,
     })
 

@@ -11,7 +11,7 @@ const ProfilePage = () => {
     const [videos, setvideos] = useState([]);
 
   useEffect(()=>{
-        axios.get(`https://foodie-scroller-backend.vercel.app/api/food-partner/${id}`,{withCredentials: true})
+        axios.get(`http://localhost:3000/api/food-partner/${id}`,{withCredentials: true})
         .then(response=>{
             setProfile(response.data.foodPartner)
             setvideos(response.data.foodPartner.foodItems)

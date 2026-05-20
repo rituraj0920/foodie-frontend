@@ -17,7 +17,7 @@ import { useNavigate } from "react-router-dom";
       const password = e.target.password.value;
       
       
-      const response =await axios.post("https://foodie-scroller-backend.vercel.app/api/auth/user/register",{
+      const response =await axios.post("http://localhost:3000/api/auth/user/register",{
           fullName,
           email,
           password
