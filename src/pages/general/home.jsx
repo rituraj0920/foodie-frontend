@@ -3,6 +3,8 @@ import './reels.css';
 import axios from 'axios';
 import { Link, useLocation } from 'react-router-dom';
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 const Reels = () => {
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +20,7 @@ const Reels = () => {
   
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/food/", { withCredentials: true })
+    axios.get(`${apiUrl}/api/auth/food`, { withCredentials: true })
       .then(response => {
          
         console.log(response.data);
