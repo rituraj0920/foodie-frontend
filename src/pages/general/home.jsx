@@ -20,7 +20,7 @@ const Reels = () => {
   
 
   useEffect(() => {
-    axios.get(`${apiUrl}/api/auth/food`, { withCredentials: true })
+    axios.get(`${apiUrl}/api/food`, { withCredentials: true })
       .then(response => {
          
         console.log(response.data);
