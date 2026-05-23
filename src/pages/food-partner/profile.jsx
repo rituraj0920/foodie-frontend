@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useState,useEffect } from 'react';
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 const ProfilePage = () => {
     const { id } = useParams();
     const [profile,setProfile ] = useState(null);
@@ -11,7 +13,7 @@ const ProfilePage = () => {
     const [videos, setvideos] = useState([]);
 
   useEffect(()=>{
-        axios.get(`http://localhost:3000/api/food-partner/${id}`,{withCredentials: true})
+        axios.get(`${apiUrl}/api/food-partner/${id}`,{withCredentials: true})
         .then(response=>{
             setProfile(response.data.foodPartner)
             setvideos(response.data.foodPartner.foodItems)

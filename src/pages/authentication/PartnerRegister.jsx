@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 
-
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const PartnerRegister=()=> {
      const navigate= useNavigate();
@@ -17,7 +17,7 @@ const PartnerRegister=()=> {
       const password = e.target.password.value;
       
       
-      await axios.post("http://localhost:3000/api/auth/food-partner/register",{
+      await axios.post(`${apiUrl}/api/auth/food-partner/register`,{
           businessname,
           email,
           password

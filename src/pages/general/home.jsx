@@ -2,10 +2,14 @@ import React, { useState, useEffect } from 'react';
 import './reels.css';
 import axios from 'axios';
 import { Link, useLocation } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
+
 const Reels = () => {
+
+  const navigate= useNavigate();
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -20,6 +24,7 @@ const Reels = () => {
   
 
   useEffect(() => {
+     
     axios.get(`${apiUrl}/api/food`, { withCredentials: true })
       .then(response => {
          
@@ -27,7 +32,9 @@ const Reels = () => {
 
         if (response.data === 401) {
           setError("Unauthorized 401: You might need to send a token or cookies. you should login first ");
-          return;
+          console.log("user should login first");
+          navigate("/user/login");
+          
         }
         if (response.data && response.data.foodItems) {
           setVideos(response.data.foodItems);
@@ -102,7 +109,7 @@ const VideoItem = ({ data, isSaved, onSave }) => {
   // 3. Function to handle clicking the Like button
    async function likeVideo(item) {
 
-        const response = await axios.post("http://localhost:3000/api/food/like", { foodId: item._id }, {withCredentials: true})
+        const response = await axios.post(`${apiUrl}/api/food/like`, { foodId: item._id }, {withCredentials: true})
 
         if(response.data.like){
             console.log("Video liked");

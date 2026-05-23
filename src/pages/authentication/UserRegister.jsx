@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+const apiUrl = import.meta.env.VITE_API_URL;
 
  const UserRegister=()=> {
     
@@ -17,7 +18,7 @@ import { useNavigate } from "react-router-dom";
       const password = e.target.password.value;
       
       
-      const response =await axios.post("http://localhost:3000/api/auth/user/register",{
+      const response =await axios.post(`${apiUrl}/api/auth/user/register`,{
           fullName,
           email,
           password
