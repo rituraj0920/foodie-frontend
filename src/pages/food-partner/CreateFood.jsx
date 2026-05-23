@@ -4,6 +4,8 @@ import { data } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 export default function CreateFood() {
   const [foodName, setFoodName] = useState('');
   const [description, setDescription] = useState('');
@@ -56,7 +58,7 @@ export default function CreateFood() {
     formData.append('description',description);
     formData.append('video',videoFile);
 
-    const responce =await axios.post("http://localhost:3000/api/food",formData,{
+    const responce =await axios.post(`${apiUrl}/api/auth/food`,formData,{
       withCredentials:true,
     })
 
