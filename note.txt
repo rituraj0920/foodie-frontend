@@ -15,3 +15,13 @@ cors policy mtlb ke ek wesite pr rhte hue dusre site prr request nhi kr skte hai
 
 
 axios is used to merge backend and frontend together on the single  page
+
+
+
+"http://localhost:3000/api/auth/food-partner/login"
+
+"http://localhost:3000/api/auth/user/login"
+
+"http://localhost:3000/api/auth/user/register"  
+
+"http://localhost:3000/api/auth/food-partner/register"
