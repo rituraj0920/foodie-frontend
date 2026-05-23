@@ -58,7 +58,7 @@ export default function CreateFood() {
     formData.append('description',description);
     formData.append('video',videoFile);
 
-    const responce =await axios.post(`${apiUrl}/api/auth/food`,formData,{
+    const responce =await axios.post(`${apiUrl}/api/food`,formData,{
       withCredentials:true,
     })
 
